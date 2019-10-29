@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './config/ReactotronConfig';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
 const styles = StyleSheet.create({
@@ -15,11 +16,13 @@ const styles = StyleSheet.create({
   },
 });
 
+console.tron.log('Hello World');
+
 export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.welcome}> Welcome to React native</Text>
-      <Text style={styles.welcome}> Abaixo</Text>
+      <Text style={styles.welcome} />
     </View>
   );
 }
