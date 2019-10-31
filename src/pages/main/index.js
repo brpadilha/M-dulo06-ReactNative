@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-
 import { Keyboard } from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialIcons'
+import api from '../../services/api'
+
 import {
   Container,
   Form,
@@ -12,14 +14,8 @@ import {
   Name,
   Bio,
   ProfileButton,
-  ProfileButtonText
+  ProfileButtonText,
  } from './styles';
-
-import Icon from 'react-native-vector-icons/MaterialIcons'
-
-import api from '../../services/api'
-
-// import { Container } from './styles';
 
 export default class Main extends Component{
   state= {
@@ -71,13 +67,14 @@ export default class Main extends Component{
 
         <List
           data={users}
-          keyExtractor={user=> user.login}
+          keyExtractor={user => user.login}
           renderItem={({item}) => (
             <User>
               <Avatar source={{uri: item.avatar}}/>
               <Name>{item.name}</Name>
               <Bio>{item.bio}</Bio>
-              <ProfileButton onPres={() => {}}>
+
+              <ProfileButton onPress={() => {}}>
                 <ProfileButtonText>Ver perfil</ProfileButtonText>
               </ProfileButton>
             </User>

@@ -35,14 +35,14 @@ export const SubmitButton = styled(RectButton)`
 `;
 
 export const List = styled.FlatList.attrs({
-  showVerticalScrollIndicator: false,
+  showsVerticalScrollIndicator: false,
 })`
   margin-top:20px;
 `;
 
 export const User = styled.View`
   align-items: center;
-  margin: 0px 20px 30px;
+  margin: 0 20px 30px;
 `;
 export const Avatar = styled.Image`
   width: 64px;
