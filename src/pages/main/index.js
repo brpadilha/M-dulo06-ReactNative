@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
 
 import { Keyboard } from 'react-native'
-import { Container, Form, Input, SubmitButton } from './styles';
+import {
+  Container,
+  Form,
+  Input,
+  SubmitButton,
+  List,
+  User,
+  Avatar,
+  Name,
+  Bio,
+  ProfileButton,
+  ProfileButtonText
+ } from './styles';
+
 import Icon from 'react-native-vector-icons/MaterialIcons'
 
 import api from '../../services/api'
@@ -11,12 +24,12 @@ import api from '../../services/api'
 export default class Main extends Component{
   state= {
     newUser: '',
-    user: [],
+    users: [],
 
   }
 
   handleAddUser = async () =>{
-    const { user ,newUser } = this.state;
+    const { users ,newUser } = this.state;
 
     const response = await api.get(`/users/${newUser}`)
 
@@ -37,7 +50,7 @@ export default class Main extends Component{
 
   render(){
 
-    const { user, newUser } = this.state;
+    const { users, newUser } = this.state;
     return (
       <Container>
         <Form>
@@ -55,6 +68,21 @@ export default class Main extends Component{
             <Icon name="add" size={20} color="#fff"/>
           </SubmitButton>
         </Form>
+
+        <List
+          data={users}
+          keyExtractor={user=> user.login}
+          renderItem={({item}) => (
+            <User>
+              <Avatar source={{uri: item.avatar}}/>
+              <Name>{item.name}</Name>
+              <Bio>{item.bio}</Bio>
+              <ProfileButton onPres={() => {}}>
+                <ProfileButtonText>Ver perfil</ProfileButtonText>
+              </ProfileButton>
+            </User>
+          )}
+        />
       </Container>
     );
 

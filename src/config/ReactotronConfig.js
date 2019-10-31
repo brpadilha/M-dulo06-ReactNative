@@ -9,3 +9,5 @@ if (__DEV__) {
 
   tron.clear(); // limpa a timeline quando dá um refresh na aplicação
 }
+
+//
