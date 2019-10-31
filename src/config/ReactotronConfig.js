@@ -1,7 +1,7 @@
 import Reactotron from 'reactotron-react-native';
 
 if (__DEV__) {
-  const tron = Reactotron.configure() // usar o ip do computador quando for usar o android como usb
+  const tron = Reactotron.configure({host: "192.168.0.108"}) // usar o ip do computador quando for usar o android como usb
     .useReactNative()
     .connect();
 
