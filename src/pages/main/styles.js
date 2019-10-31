@@ -76,7 +76,7 @@ export const ProfileButton = styled(RectButton)`
   height: 36px;
 `;
 
-export const ProfileButtonTex = styled.Text`
+export const ProfileButtonText = styled.Text`
   font-size: 14px;
   font-weight: bold;
   color: #fff;
