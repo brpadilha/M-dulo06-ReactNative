@@ -10,4 +10,4 @@ if (__DEV__) {
   tron.clear(); // limpa a timeline quando dá um refresh na aplicação
 }
 
-//
+//{host: "192.168.0.108"}
